@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Property Manager!</h1>
+      <p>...</p>
+      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-lg-8">
+        <div class="row">
+          <label>Bedrooms
+          <input ng-model="vm.searchObject.bedrooms"></input>
+          </label>
+        </div>
+        <div class="row">
+          <label>Bathroom
+          <input ng-model="vm.searchObject.bathrooms"></input>
+          </label>
+        </div>
+        <div class="row">
+          <label>Min. Rent
+          <input ng-model="vm.searchObject.minRent"></input>
+          </label>
+        </div>
+        <div class="row">
+          <label>Max Rent
+          <input ng-model="vm.searchObject.maxRen"></input>
+          </label>
+        </div>
+        <div class="row">
+          <label>City
+          <input ng-model="vm.searchObject.city"></input>
+          </label>
+        </div>
+        <div class="row">
+          <button ng-click="vm.propertySearch(vm.searchObject)">Search</button>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-4 col-lg-4">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name">
+            <input type="text" class="form-control" placeholder="Email">
+          </div>
+          <button type="submit" class="btn btn-default">Log In</button>
+          <button type="submit" class="btn btn-default">Register</button>
+        </form>
+      </div>
+      <!-- End of Row -->
+
+
+
+
+
+
+    </div>
+    <!--end of main container div -->
+    <!--<script src="bower_components/angular/angular.js"></script>
+
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/app/search/search.controller.js"></script>
+  <script src="/app/core/property.factory.js"></script>
+  <script src="/app/app.js"></script>-->
+
+
+</body>
+
+</html>

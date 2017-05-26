@@ -20,9 +20,11 @@
                 templateUrl: "app/search/search.grid.html"
                 
             })
-            .state("about", {
-                url: "/about",
-                templateUrl: "app/partials/about.html"
+            .state("register", {
+                url: "/register",
+                templateUrl: "app/user/register.html",
+                controller:"UserController",
+                controllerAs:"vm"
             })
     });
 

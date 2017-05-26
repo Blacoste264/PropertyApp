@@ -17,13 +17,20 @@
             })
             .state("searchGrid", {
                 url: "/search.grid",
-                templateUrl: "app/search/search.grid.html"
-                
+                templateUrl: "app/search/search.grid.html",
+                controller: "SearchController",
+                controllerAs : "vm"
             })
             .state("register", {
                 url: "/register",
                 templateUrl: "app/user/register.html",
                 controller:"UserController",
+                controllerAs:"vm"
+            })
+            .state("addProperty", {
+                url: "/property",
+                templateUrl: "app/property/property.detail.html",
+                controller:"PropertyController",
                 controllerAs:"vm"
             })
     });

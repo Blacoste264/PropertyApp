@@ -9,16 +9,22 @@
 
     function UserFactory($http, localApi) {
         var service = {
-            postRegistration: postRegistration
+            postRegistration: postRegistration,
+            searchUsers: searchUsers
         };
 
         return service;
 
         function postRegistration(registration) {
+            console.log(registration);
             return $http({
-                Method: 'POST',
-                URL: localApi + 'Users',
-                data: registration
+                method: 'POST',
+                url: localApi + '/users',
+                dataType: "json",
+                data: registration,
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8'
+                }
 
             }).then(function (info) {
                 return info;
@@ -26,5 +32,19 @@
                 return error;
             })
         }
+
+        function searchUsers(details){
+        return $http ({
+            method: 'GET',
+            url: localApi+'/Users/UserSearch',
+            params: details,
+        }).then (function(returned){
+            return returned;
+        }, function (error){
+            console.log("Error"+ error);
+            return error;
+        });
+        }
     }
 })();
+

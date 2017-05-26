@@ -1,0 +1,14 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Search Results</div>
+  <div class="panel-body">
+    <div class="list-group">
+        <button type="button" 
+          class="list-group-item" 
+          ng-repeat="property in vm.foundProperty"
+          ng-click="vm.selectProperty()" 
+          ng-model="vm.propertyDetails">
+          {{}}
+        </button>
+    </div>
+  </div>
+</div>

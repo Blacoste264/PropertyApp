@@ -5,25 +5,25 @@
         .module('app')
         .controller('PropertyController', PropertyController);
 
-    PropertyController.$inject = ['PropertyFactory'];
+    PropertyController.$inject = ['PropertyFactory','localStorageService'];
 
-    function PropertyController(PropertyFactory) {
+    function PropertyController(PropertyFactory,localStorageService) {
         var vm = this;
 
         vm.propObject = {};
         vm.propObject.userId=1;
-        vm.propObject.propertyName = "Sunflower Apartments";
-        vm.propObject.address1 = "xxx";
-        vm.propObject.address2 = "xxx";
-        vm.propObject.city = "San Diego";
-        vm.propObject.state = "CA";
-        vm.propObject.zipCode = 92126;
-        vm.propObject.phoneNumber = "(858) 578-8111";
-        vm.propObject.rentMonth = 1000;
-        vm.propObject.squareFoot = 1000;
-        vm.propObject.bedrooms =3;
-        vm.propObject.bathrooms = 2.5;
-        vm.propObject.leaseTerms = 12;
+        vm.propObject.propertyName = "";
+        vm.propObject.address1 = "";
+        vm.propObject.address2 = "";
+        vm.propObject.city = "";
+        vm.propObject.state = "";
+        vm.propObject.zipCode = 0;
+        vm.propObject.phoneNumber = "";
+        vm.propObject.rentMonth = 0;
+        vm.propObject.squareFoot = 0;
+        vm.propObject.bedrooms =0;
+        vm.propObject.bathrooms = 0;
+        vm.propObject.leaseTerms = 0;
         vm.propObject.imagePath = "/imagepath";
         vm.propObject.pets = false;
 

@@ -110,12 +110,12 @@ namespace Co11PropProject.Controllers
             //IQueryable<User> finalCountdown = db.Users;
             // var finalCountdown = db.Users;
             //.FirstOrDefault(u => u.UserName == username);
-            int userID = 0;
+            User userID = null;
             if (email != null && username != null)
             {
                userID = (from u in db.Users where u.Email == email && 
-                         u.UserName == username select u.UserId).FirstOrDefault(); 
-                //finalCountdown = finalCountdown.Where(u => u.UserName == username);
+                         u.UserName == username select u).FirstOrDefault(); 
+                
             }
             return Ok(userID);
         }

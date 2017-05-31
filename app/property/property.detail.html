@@ -9,68 +9,115 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="col-lg-4">
-            <row>
-                <label>Property Name</label>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Property Name </label>
+            <div class="col-lg-10">
                 <input ng-model="vm.propObject.propertyName" type="text">
-            </row>
-            <row>
-                <label>Address 1</label>
-                <input ng-model="vm.propObject.address1" type="text">
-            </row>
-            <row>
-                <label>Address 2</label>
-                <input ng-model="vm.propObject.address2" type="text">
-            </row>
-            <row>
-                <label>City</label>
-                <input ng-model="vm.propObject.city" type="text">
-            </row>
-            <row>
-                <label>State</label>
-                <input ng-model="vm.propObject.state" type="text">
-            </row>
-            <row>
-                <label>Zip Code</label>
-                <input ng-model="vm.propObject.zipCode" type="number">
-                <label>Phone Number</label>
-                <input ng-model="vm.propObject.phoneNumber" type="text">
-            </row>
-            <row>
-                <label>Monthly Rent</label>
-                <input ng-model="vm.propObject.rentMonth" type="number">
-            </row>
-            <row>
-                <label>Square Foot</label>
-                <input ng-model="vm.propObject.squareFoot" type="number">
-            </row>
-            <row>
-                <label>Bedrooms</label>
-                <input ng-model="vm.propObject.bedrooms" type="number">
-            </row>
-            <row>
-                <label>Bathrooms</label>
-                <input ng-model="vm.propObject.bathrooms" type="number">
-            </row>
-            <row>
-                <label>Lease Terms</label>
-                <select class="selectpicker" ng-model="vm.propObject.leaseTerms">
-            </row>
-
-            <option value="12">Monthly</option>
-            <option value="2">Bi-Annually</option>
-            <option value="1">Annually</option>
-            </select>
-                <!-- <input ng-model="vm.propObject.imagePath"> -->
-                <row>
-                    <label>Dogs ok, I guess. No cats. </label>
-                    <input type="checkbox" ng-model="vm.propObject.pets">
-
-                </row>
-                <button type="submit" ng-click="vm.addProperty(vm.propObject)">Add Property</button>
+            </div>
         </div>
-    </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Address 1 </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.address1" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Address 2 </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.address2" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> City </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.city" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> State </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.state" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Zip Code </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.zipCode" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Phone Number </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.phoneNumber" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Rent </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.rentMonth" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Square Footage </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.squareFoot" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Bedrooms </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.bedrooms" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Bathrooms </label>
+            <div class="col-lg-10">
+                <input ng-model="vm.propObject.bathrooms" type="text">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="propertyName" class="control-label col-lg-2"> Lease Terms </label>
+            <div class="col-lg-10">
+                <select class="selectpicker" ng-model="vm.propObject.leaseTerms">
+                    <option value="12">Monthly</option>
+                    <option value="2">Bi-Annually</option>
+                    <option value="1">Annually</option>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+            <label for="propertyName" class="control-label col-lg-2"> Pets Are Friends? </label>
+                <input type="checkbox" ng-model="vm.propObject.pets">
+            <button type="submit" ng-click="vm.addProperty(vm.propObject)">Add Property</button>
+                </div>
+            </div>
+            <!--<div class="form-group">
+                <label for="propertyName" class="control-label col-lg-2"> Pets Are Friends? </label>
+            <div class="col-lg-offset-2 col-lg-10">
+                </div>-->
+            </div>
+
+
+        
+<!--aaaaaaaaaaaaarrrrrrrrrrrrrrrrrrrrggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh-->
+
+               
+                <!--<input ng-model="vm.propObject.imagePath">-->
+            <!--<row>
+                <div class="col-md-3">
+                <label>Pet Friendly</label>
+                </div>
+                <div class="col-md-9">
+                <input type="checkbox" ng-model="vm.propObject.pets"/>
+                </div>
+            </row>
+                <row>
+                <div class="col-md-2">  
+                </div>
+            </row>-->
+   
+    </form>
 </body>
 
 </html>

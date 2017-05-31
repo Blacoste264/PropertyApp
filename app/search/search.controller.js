@@ -5,9 +5,12 @@
         .module('app')
         .controller('SearchController', SearchController);
 
-    SearchController.$inject = ['PropertyFactory','UserFactory', '$state']
-    function SearchController(PropertyFactory,UserFactory, $state) {
+    SearchController.$inject = ['PropertyFactory', 'UserFactory', '$state', 'localStorageService']
+
+    function SearchController(PropertyFactory, UserFactory, $state, localStorageService
+    ) {
         var vm = this;
+        vm.title = 'searchController';        
         vm.searchObject = {};
         vm.userObject = {};
         vm.searchObject.bedrooms = 0;
@@ -18,32 +21,53 @@
         vm.goSomewhere = goSomewhere;
         vm.searchObject.zipCode = 0;
         vm.userObject.userName = "";
-        vm.userObject.email="";
+        vm.userObject.email = "";
+        vm.showResults = false;
+        vm.propertyOwner = false;
+        vm.signedIn = true;
 
         vm.propertySearch = function (searchObject) {
-           
+
             PropertyFactory
                 .propSearch(searchObject)
                 .then(function (response) {
+                    searchResults(response.data);
                     console.log(response);
-                    goSomewhere();
+                    vm.showResults = true;
+                    // goSomewhere();
                 }, function (error) {
                     console.log(error);
                 })
         }
 
         function goSomewhere() {
-                $state.go('searchGrid');
+            $state.go('searchGrid');
         };
 
-        vm.login = function(loginObject){
-        UserFactory
-        .searchUsers(loginObject)
-        .then(function (returned){
-            alert("Logged In");
-        }, function(error) {
-            console.log(error);
-            })
+        vm.login = function (loginObject) {
+            UserFactory
+                .searchUsers(loginObject)
+                .then(function (returned) {
+                    alert("Logged In");
+                    localStorageService.set('userName', returned.data.userName);
+                    var name = localStorageService.get('userName');
+                    vm.propertyOwner = returned.data.propertyOwner;
+                    vm.signedIn = false;
+                    console.log(returned);
+                }, function (error) {
+                    console.log(error);
+                })
         }
+
+        function searchResults(results) {
+            // console.log(results);
+            // for (var i = 0; i < results.length; i++) {
+               vm.foundProperty = results;
+                console.log(vm.foundProperty);
+                console.log(results.data);
+           // }
+        };
+
+
     }
 })();

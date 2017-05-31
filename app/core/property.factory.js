@@ -23,7 +23,6 @@
                 url: localApi + 'Properties/PropertySearch',
                 params: searchParameters
             }).then(function (response) {
-                console.log(response);
                 return response;
             }, function (error) {
                 console.log("Error" + error);

@@ -2,13 +2,23 @@
   <div class="panel-heading">Search Results</div>
   <div class="panel-body">
     <div class="list-group">
-        <button type="button" 
-          class="list-group-item" 
-          ng-repeat="property in vm.foundProperty"
-          ng-click="vm.selectProperty()" 
-          ng-model="vm.propertyDetails">
+
+     <ol class="list-group" ng-repeat ="property in vm.foundProperty">
+        <li class="list-group-item">Bedrooms: {{property.bedrooms}}</li>
+        <li class="list-group-item">Bathrooms: {{property.bathrooms}}</li>
+        <li class="list-group-item">Rent: {{property.rentMonth}}</li>
+        <li class="list-group-item">Address: {{property.address1}}</li>
+        <li class="list-group-item">City: {{property.city}}</li>
+      </ol>
+      <!--<ul>
+        <li ng-repeat ="property in vm.foundProperty">
+        {{}}
+        </li>
+      </ul>-->
+      <p>Hi</p>
+      <!--<button type="button" class="list-group-item" ng-repeat="property in vm.foundProperty" ng-click="vm.selectProperty()">
           {{}}
-        </button>
+        </button>-->
     </div>
   </div>
 </div>

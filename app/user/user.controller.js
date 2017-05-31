@@ -5,10 +5,10 @@
         .module('app')
         .controller('UserController', UserController);
 
-    UserController.$inject = ['UserFactory', '$state'];
-    function UserController(UserFactory, $state) {
+    UserController.$inject = ['UserFactory', '$state', 'LocalStorageService'];
+    function UserController(UserFactory, $state, LocalStorageService) {
         var vm = this;
-        vm.nameObject= {};
+        vm.nameObject = {};
         vm.nameObject.firstName = "";
         vm.nameObject.lastName="";
         vm.nameObject.email= "";
@@ -37,3 +37,4 @@
 
     }
 })();
+

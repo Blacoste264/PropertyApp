@@ -17,6 +17,6 @@ namespace Co11PropProject.Models
         public bool PropertyOwner { get; set; }
         public string UserName { get; set; }
 
-        public virtual ICollection<Property> Properties { get; set; }
+        public ICollection<Property> Properties { get; set; }
     }
 }

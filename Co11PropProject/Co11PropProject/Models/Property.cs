@@ -27,6 +27,6 @@ namespace Co11PropProject.Models
         public int LeaseTerms { get; set; }
         public string ImagePath { get; set; }
 
-        public virtual User User { get; set; }
+        public User User { get; set; }
     }
 }

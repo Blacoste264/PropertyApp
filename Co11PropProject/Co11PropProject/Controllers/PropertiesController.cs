@@ -115,10 +115,6 @@ namespace Co11PropProject.Controllers
         {
             IQueryable<Property> finalProperties = db.Properties;
 
-            //if (search.UserName != null)
-            //{
-            //    finalProperties = GetPropsByUsername(search.UserName);
-            //}
 
             if (search.Bedrooms != null)
             {
@@ -138,10 +134,10 @@ namespace Co11PropProject.Controllers
                 finalProperties = finalProperties.Where(p => p.RentMonth <= search.MaxRent);
             }
 
-            if (search.ZipCode != null)
-            {
-                finalProperties = finalProperties.Where(p => p.ZipCode == search.ZipCode);
-            }
+            //if (search.ZipCode != null)
+            //{
+            //    finalProperties = finalProperties.Where(p => p.ZipCode == search.ZipCode);
+            //}
 
             if (search.City != null)
             {

@@ -10,7 +10,7 @@
     function PropertyFactory($http, localApi) {
         var service = {
             propSearch: propSearch,
-            postProperty:postProperty
+            postProperty: postProperty
         };
 
         return service;
@@ -28,6 +28,8 @@
                 console.log("Error" + error);
                 return error;
             });
+
+
         }
 
         function postProperty(propertyInfo) {

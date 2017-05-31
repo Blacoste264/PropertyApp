@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Property Functionality</title>
+  
 </head>
 
 <body>
   <div class="container">
     <div class="jumbotron">
       <h1>Property Manager!</h1>
-      <p>...</p>
-      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
     </div>
+
     <div class="row">
       <div class="col-xs-12 col-md-8 col-lg-8">
         <div class="row">
@@ -58,11 +58,12 @@
           <button type="submit" class="btn btn-default" ng-show="vm.propertyOwner" ui-sref="addProperty">Add Property</button>
         </form>
       </div>
+      </div>
+
       <!-- End of Row -->
 
+       <div class="row">
 
-      <div class="panel panel-primary">
-        <div class="panel-heading">Search Results</div>
         <div class="panel-body">
 
           <ol class="list-group" ng-show="vm.showResults" ng-repeat="property in vm.foundProperty">
@@ -72,9 +73,7 @@
             <li class="list-group-item">Address: {{property.address1}}</li>
             <li class="list-group-item">City: {{property.city}}</li>
           </ol>
-          <p>Good morning, Dave!</p>
-        </div> 
-      </div>   <!--Panel Body-->
+      </div>
     </div>
   <!--end of main container div -->
 

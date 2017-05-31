@@ -5,8 +5,8 @@
         .module('app')
         .controller('UserController', UserController);
 
-    UserController.$inject = ['UserFactory', '$state', 'LocalStorageService'];
-    function UserController(UserFactory, $state, LocalStorageService) {
+    UserController.$inject = ['UserFactory', '$state'];
+    function UserController(UserFactory, $state) {
         var vm = this;
         vm.nameObject = {};
         vm.nameObject.firstName = "";

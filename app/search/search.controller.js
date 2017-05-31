@@ -5,9 +5,9 @@
         .module('app')
         .controller('SearchController', SearchController);
 
-    SearchController.$inject = ['PropertyFactory', 'UserFactory', '$state', 'localStorageService']
+    SearchController.$inject = ['PropertyFactory', 'UserFactory', 'localStorageService']
 
-    function SearchController(PropertyFactory, UserFactory, $state, localStorageService
+    function SearchController(PropertyFactory, UserFactory,  localStorageService
     ) {
         var vm = this;
         vm.title = 'searchController';        
@@ -18,7 +18,6 @@
         vm.searchObject.minRent = 0;
         vm.searchObject.maxRent = 0;
         vm.searchObject.city = "";
-        vm.goSomewhere = goSomewhere;
         vm.searchObject.zipCode = 0;
         vm.userObject.userName = "";
         vm.userObject.email = "";
@@ -31,18 +30,17 @@
             PropertyFactory
                 .propSearch(searchObject)
                 .then(function (response) {
+
                     searchResults(response.data);
                     console.log(response);
                     vm.showResults = true;
-                    // goSomewhere();
+
                 }, function (error) {
                     console.log(error);
                 })
         }
 
-        function goSomewhere() {
-            $state.go('searchGrid');
-        };
+
 
         vm.login = function (loginObject) {
             UserFactory

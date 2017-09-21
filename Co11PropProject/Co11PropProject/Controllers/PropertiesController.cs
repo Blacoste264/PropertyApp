@@ -18,9 +18,6 @@ namespace Co11PropProject.Controllers
     {
         private DataContext db = new DataContext();
         
-
-
-
         // GET: api/Properties
         public IQueryable<Property> GetProperties()
         {
@@ -38,9 +35,7 @@ namespace Co11PropProject.Controllers
             }
             return Ok(property);
         }
-
-           
-
+        
         // PUT: api/Properties/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutProperty(int id, Property property)
@@ -72,7 +67,6 @@ namespace Co11PropProject.Controllers
                     throw;
                 }
             }
-
             return StatusCode(HttpStatusCode.NoContent);
         }
 
@@ -84,7 +78,6 @@ namespace Co11PropProject.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             db.Properties.Add(property);
             db.SaveChanges();
 
@@ -106,8 +99,7 @@ namespace Co11PropProject.Controllers
 
             return Ok(property);
         }
-
-
+        
         // PropertySearch
         [HttpGet]
         [Route("api/Properties/PropertySearch")]
@@ -124,7 +116,6 @@ namespace Co11PropProject.Controllers
             {
                 finalProperties = finalProperties.Where(p => p.Bathrooms == search.Bathrooms);
             }
-
             if (search.MinRent != null)
             {
                 finalProperties = finalProperties.Where(p => p.RentMonth >= search.MinRent);
@@ -133,12 +124,6 @@ namespace Co11PropProject.Controllers
             {
                 finalProperties = finalProperties.Where(p => p.RentMonth <= search.MaxRent);
             }
-
-            //if (search.ZipCode != null)
-            //{
-            //    finalProperties = finalProperties.Where(p => p.ZipCode == search.ZipCode);
-            //}
-
             if (search.City != null)
             {
                 finalProperties = finalProperties.Where(p => p.City == search.City);
@@ -146,9 +131,6 @@ namespace Co11PropProject.Controllers
 
             return (finalProperties);
         }
-
-
-
 
         protected override void Dispose(bool disposing)
         {
@@ -165,41 +147,3 @@ namespace Co11PropProject.Controllers
         }
     }
 }
-
-
-
-//if(bed!=null)
-//{ 
-//var beds = from b in db.Properties
-//           where b.Equals(bed)
-//           select b;
-
-//return Ok(beds);
-//}
-//if (bath != null)
-//{
-
-//    var baths = from b in db.Properties
-//                where b.Equals(bath)
-//                select b;
-
-//    return Ok(baths);
-//}
-//if (minRent!= null|| maxRent!= null)
-//{
-//    var rent = from r in db.Properties
-//               where r.RentMonth > minRent && r.RentMonth <= maxRent
-//               select r;
-//    return Ok(rent);
-
-//   }
-
-//if (city != null)
-//{
-
-//    var cities = from c in db.Properties
-//                where c.Equals(city)
-//                select c;
-
-//    return Ok(city);
-//}

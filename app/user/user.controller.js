@@ -4,37 +4,32 @@
     angular
         .module('app')
         .controller('UserController', UserController);
-
+    // Inject User Factory to enable RESTful APIs
     UserController.$inject = ['UserFactory', '$state'];
     function UserController(UserFactory, $state) {
         var vm = this;
         vm.nameObject = {};
         vm.nameObject.firstName = "";
-        vm.nameObject.lastName="";
-        vm.nameObject.email= "";
-        vm.nameObject.propertyOwner= false;
+        vm.nameObject.lastName ="";
+        vm.nameObject.email = "";
+        vm.nameObject.propertyOwner = false;
         vm.goBack = goBack;
         
-
-       
-
-        vm.register= function (nameObject){
-        vm.nameObject.userName=vm.nameObject.firstName+" "+vm.nameObject.lastName
+        // Register first, last, email, and prop owner T/F
+        vm.register = (nameObject) => {
+        vm.nameObject.userName = vm.nameObject.firstName + " " + vm.nameObject.lastName;
            UserFactory 
            .postRegistration(nameObject)
-           .then(function(info){
-               console.log (info);
+           .then( () => {
                goBack();
-
-           }, function(error){
-               console.log(error);
-
+           }, (error) => {
+               return error;
            })
         }
+        // Redirects to sign in page
         function goBack(){
             $state.go('signIn');
         }
-
     }
 })();
 

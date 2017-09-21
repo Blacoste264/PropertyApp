@@ -25,7 +25,6 @@ namespace Co11PropProject
 
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.Re‌​ferenceLoopHandling = ReferenceLoopHandling.Ignore;
 
-
             // Web API routes
             config.MapHttpAttributeRoutes();
 
